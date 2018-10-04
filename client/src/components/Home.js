@@ -1,18 +1,27 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
+import styled from 'styled-components'
+
+const LandingPageStyle = styled.div`
+  font-style: italic;
+  letter-spacing: 13px;
+  line-height: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+`
 
 export default class Home extends Component {
   render() {
     return (
-      <div>
-        H E R E <br/>
-        C O M E S <br/>
-        D A T <br/>
-        B O I <br/>
-        ( O H S H I T W H A D D U P )<br/>
+      <LandingPageStyle>
+        HERE <br/>
+        COMES <br/>
+        DAT <br/>
+        BOI <br/>
+        ( OH SHIT WHADDUP )<br/>
         <Link to='/login'>die communist scum</Link>
         <img src="https://i.imgur.com/HhblAEG.gif" alt="ohshitwaddup"/>
-      </div>
+      </LandingPageStyle>
     )
   }
 }

@@ -2,7 +2,9 @@ const Schema = require('mongoose').Schema
 
 const IdeaSchema = new Schema({
     title: String,
-    description: String
+    default: 'best idea ever',
+    description: String,
+    default: 'doge'
 }) 
 
 const UserSchema = new Schema({
