@@ -3,12 +3,8 @@ const mongoose = require('mongoose')
 mongoose.connect(process.env.MONGODB_URI, {useMongoClient: true})
 mongoose.Promise = global.Promise
 
-const { User, Idea } = require('./schema')
+const { User, Idea } = require('./model')
 
-const dang = new Idea({
-    title: 'Bork',
-    description: 'Doge is cool'
-})
 const mars = new Idea({
   title: 'Fly to Mars',
   description: "Earth isn't Red enough. Let's move to a new planet"
@@ -21,11 +17,6 @@ const elon = new User({
   userName: 'elon_musk',
   password: 'spaceiscool',
   ideas: [mars, tesla]
-})
-const doge = new User({
-    username: 'doge',
-    password: 'wow',
-    ideas: [dang]
 })
 
 User.remove({})

@@ -23,10 +23,17 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(__dirname + '/client/build/'));
+
 //configuring app to use react for routes
 app.get('/', (req,res) => {
     res.sendFile(__dirname + '/client/build/index.html')
   })
+
+const usersController = require('./routes/usersController')
+
+//declaring a route to go through API explicitly declares this route is from the server, and not React
+app.use('/api/users', usersController)
+
+//exporting app
 module.exports = app;
