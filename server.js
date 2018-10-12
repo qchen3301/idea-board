@@ -31,11 +31,12 @@ app.get('/', (req,res) => {
   })
 
 const usersController = require('./routes/usersController')
+const ideasController = require('./routes/ideasController')
 
 //declaring a route to go through API explicitly declares this route is from the server, and not React
 app.use('/api/users', usersController)
 
-const ideasController = require('./routes/ideasController')
+
 //declaring a route to go through API explicitly declares this route is from the server, and not React
 app.use('/api/users/:userId/ideas', ideasController)
 
